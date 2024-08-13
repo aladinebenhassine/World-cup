@@ -1,0 +1,13 @@
+
+{
+  "status": "success",
+  "data": {
+    "score": "1 - 1"
+  },
+  "disabled": {
+    "status": "error",
+    "data": {
+      "error": "Could not retrieve the score due to a network issue."
+    }
+  }
+}

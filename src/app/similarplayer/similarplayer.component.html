@@ -1,0 +1,141 @@
+<div class="site-wrap">
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <header class="site-navbar py-4" role="banner">
+
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="ml-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="matches.html" class="nav-link">Dashboard</a></li>
+              <li class="active"><a routerLink="/match" class="nav-link">Matches</a></li>
+              <li><a href="players.html" class="nav-link">Players</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <a href="#"
+             class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+            class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="container mt-4 " style="z-index: 1000">
+          <div class="table-container">
+            <h1>Football Betting</h1>
+
+            <div class="form-group">
+              <label for="playerSelect">Select a Player:</label>
+              <select class="form-control" id="playerSelect" [(ngModel)]="selectedPlayer"
+                      (ngModelChange)="loadSimilarPlayers(selectedPlayer)">
+                <option *ngFor="let player of players" [value]="player.Name">{{ player.Name }}</option>
+              </select>
+            </div>
+
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Shirt Number</th>
+                <th>Position</th>
+                <th>Played Matches</th>
+                <th>Score Numbers</th>
+                <th>Line-Up Matches</th>
+                <th>Yellow Cards</th>
+                <th>Red Cards</th>
+                <th>Goal Per Match</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let similarplayer of similarPlayers">
+                <td>{{ similarplayer.name }}</td>
+                <td>{{ similarplayer.team }}</td>
+                <td>{{ similarplayer.shirtNumber }}</td>
+                <td>{{ similarplayer.position }}</td>
+                <td>{{ similarplayer.playedMatches }}</td>
+                <td>{{ similarplayer.scoreNumbers }}</td>
+                <td>{{ similarplayer.lineUpMatches }}</td>
+                <td>{{ similarplayer.yellowCards }}</td>
+                <td>{{ similarplayer.redCards }}</td>
+                <td>{{ similarplayer.goalPerMatch }}</td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div> <!-- End of button row -->
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="container mt-4">
+<div class="row">
+ <div class="col">
+   <h1 class="mb-4">Football Betting</h1  >
+
+   <div id="playerCarousel" class="carousel slide mb-4" data-ride="carousel">
+     <div class="carousel-inner">
+       <div class="carousel-item" *ngFor="let player of players; let i = index" [class.active]="i === 0">
+         <img [src]="player.image" [alt]="player.name" class="d-block w-100">
+         <div class="carousel-caption">
+           <h3>{{ player.name }}</h3>
+         </div>
+       </div>
+     </div>
+     <a class="carousel-control-prev" href="#playerCarousel" role="button" data-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="sr-only">Previous</span>
+     </a>
+     <a class="carousel-control-next" href="#playerCarousel" role="button" data-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="sr-only">Next</span>
+     </a>
+   </div>
+
+   <div class="row">
+     <div class="col-md-4" *ngFor="let player of similarPlayers" (mouseover)="showPlayerDetails(player)" (mouseleave)="hidePlayerDetails()">
+       <div class="similar-player-card">
+         <img [src]="player.image" [alt]="player.name" class="img-fluid">
+       </div>
+     </div>
+   </div>
+
+   <div *ngIf="selectedPlayerDetails" class="player-details">
+     <h3>{{ selectedPlayerDetails.name }}</h3>
+   </div>
+ </div>
+</div>
+</div>
+-->

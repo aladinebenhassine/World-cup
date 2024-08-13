@@ -1,0 +1,50 @@
+body {
+  background-color: #1d3557;
+}
+
+.custom-select-box .ng-select-container {
+  background-color: #457b9d; /* A deep blue color */
+  border-radius: 5px;
+  border: none;
+  color: #ffffff; /* White color for the text */
+  padding: 5px;
+}
+
+.custom-select-box .ng-select-container .ng-value-container .ng-value {
+  background-color: #1d3557; /* A darker blue for the selected item */
+  color: #ffffff; /* White color for the selected text */
+}
+
+.custom-select-box .ng-select-container .ng-option {
+  color: #ffffff; /* White color for the dropdown options */
+}
+
+.custom-select-box .ng-select-container .ng-option.selected {
+  background-color: #1d3557; /* A darker blue for the selected option */
+}
+
+.emoji-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  margin: 0 auto;
+  background-color: #a9d2e8; /* Darker blue for the avatar background */
+}
+
+.card {
+  background-color: #457b9d; /* Darker blue for the card background */
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #1d3557; /* Darker blue for the button background */
+  border-color: #1d3557;
+}
+
+.text-white, .badge.bg-primary, h4.text-danger {
+  color: #fff !important;
+}
